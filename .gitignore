@@ -1,0 +1,15 @@
+data/push_to_hub.py
+data/tokenized_dataset
+data/clustered_jglaser_binding_affinity/latents_processed_train
+data/clustered_jglaser_binding_affinity/latents_processed_validation
+data/*.csv
+data/*.csv.gz
+train_vae/wandb/
+train_vae/checkpoints/
+train_vae/*.out
+train_diffusion/wandb
+train_diffusion/lightning_logs
+train_diffusion/*.out
+train_diffusion/Prot2Chem_Diffusion
+train_diffusion/version_*
+src/__pycache__
