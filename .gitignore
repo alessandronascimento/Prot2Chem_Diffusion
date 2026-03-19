@@ -13,3 +13,9 @@ train_diffusion/*.out
 train_diffusion/Prot2Chem_Diffusion
 train_diffusion/version_*
 src/__pycache__
+inference/__pycache__
+utils/JGlaser_*
+utils/tmp
+utils/jglaser.fasta.gz
+inference/conditional_generation/DUDEZ/*.csv
+inference/unconditional_generation/*.csv

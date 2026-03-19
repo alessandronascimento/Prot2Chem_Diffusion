@@ -1,0 +1,6 @@
+targetID  alnScore  seqIdentity  eVal  qStart  qEnd  qLen  tStart  tEnd  tLen [queryOrfStart] [queryOrfEnd] [dbOrfStart] [dbOrfEnd] [alnCigar]
+ABL1    486944  0.453   260     141     0       1       260     262     519     8.520E-76       259
+HDAC8   187168  0.432   342     193     0       23      362     26      367     6.269E-95       319
+LCK     54950   0.505   261     128     0       5       264     220     480     1.599E-83       281
+PTN1    4753    0.400   239     140     0       39      273     238     476     1.697E-51       190
+SRC     54720   0.533   267     118     0       1       254     182     448     2.928E-83       280
