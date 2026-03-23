@@ -36,14 +36,11 @@ class MolecularVAE(nn.Module):
         # Expand z back to hidden size
         z_projected = self.fc_decode(z) # [Batch, 1024]
 
-        # The decoder expects a sequence for cross-attention.
-        # We give it a sequence of length 1: just our latent vector.
         encoder_hidden_states = z_projected.unsqueeze(1) # [Batch, 1, 1024]
         encoder_outputs_tuple = (encoder_hidden_states,)
 
         outputs = self.bart(
             input_ids=None, # BART handles this internally if labels are provided
-#            encoder_outputs=None, # We provide hidden states manually below
             encoder_outputs=encoder_outputs_tuple,
             labels=labels
         )

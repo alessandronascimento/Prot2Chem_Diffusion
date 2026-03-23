@@ -6,10 +6,10 @@ from utils import decode_from_latent
 from transformers import AutoTokenizer, AutoModel
 import argparse
 import sys
-sys.path.append('../src')
 from diffuser_lightning import Prot2Chem_Diffusion
 from vae_model import MolecularVAE
 import pandas as pd
+from utils.load_model import load_pretrained_models
 
 
 def generate_target_embeddings(target_seq='', model_name='facebook/esm2_t33_650M_UR50D', device='cuda'):
@@ -98,8 +98,6 @@ if __name__ == "__main__":
     parser.add_argument("--steps", type=int, default=1000, help="Number of diffusion steps")
     parser.add_argument("--guidance_scale", type=float, default=4.0, help="Classifier-Free Guidance scale")
     parser.add_argument("--batch_size", type=int, default=64, help="Number of molecules to generate in a batch")
-    parser.add_argument("--vae_checkpoint", type=str, default="../train_vae/checkpoints/molgen_vae_epoch_2", help="Path to VAE checkpoint")
-    parser.add_argument("--diffuser_checkpoint", type=str, default="../train_diffusion/Prot2Chem_Diffusion/xhymmzbm/checkpoints/epoch=299-step=1545704.ckpt", help="Path to Diffusion model checkpoint")
     parser.add_argument('--output_prefix', type=str, default='generated_molecules', help='Prefix for output files')
     parser.add_argument('--seed', type=int, default=23, help='Random seed for reproducibility')
     args = parser.parse_args()
@@ -120,12 +118,7 @@ if __name__ == "__main__":
     
     SCALE_FACTOR = 2.15709
 
-    vae_model = MolecularVAE(model_name="zjunlp/MolGen-large", latent_dim=256)
-    state_dict = torch.load(f"{args.vae_checkpoint}/pytorch_model.bin")
-    state_dict = {k.replace("module.", ""): v for k, v in state_dict.items()}
-    vae_model.load_state_dict(state_dict)
-    
-    diffusion_model = Prot2Chem_Diffusion.load_from_checkpoint(args.diffuser_checkpoint)
+    vae_model, diffusion_model = load_pretrained_models()
 
     tokenizer = AutoTokenizer.from_pretrained("zjunlp/MolGen-large")
 
