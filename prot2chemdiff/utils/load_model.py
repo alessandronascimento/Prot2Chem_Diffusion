@@ -1,7 +1,7 @@
 from huggingface_hub import hf_hub_download
 import torch
-from vae_model import MolecularVAE
-from diffuser_lightning import Prot2Chem_Diffusion
+from prot2chemdiff.vae_model import MolecularVAE
+from prot2chemdiff.diffuser_lightning import Prot2Chem_Diffusion
 
 def load_pretrained_models(repo_id="alessandronascimento/prot2chemdiff"):
     """

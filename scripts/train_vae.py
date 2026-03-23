@@ -8,8 +8,8 @@ from tqdm.auto import tqdm
 import os
 import wandb 
 import numpy as np
-from vae_model import MolecularVAE
-from kl_annealing import KLAnnealer
+from prot2chemdiff.vae_model import MolecularVAE
+from prot2chemdiff.utils.kl_annealing import KLAnnealer
 
 
 ##############################   Inputs   ##############################

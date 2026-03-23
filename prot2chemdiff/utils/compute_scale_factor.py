@@ -1,7 +1,7 @@
 import torch
-from latent_dataset import StreamingLatentDataset
 from torch.utils.data import DataLoader
 import tqdm
+from prot2chemdiff.utils.latent_dataset import StreamingLatentDataset
 
 if __name__ == "__main__":
     data_dir = './'

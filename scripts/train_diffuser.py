@@ -1,9 +1,9 @@
 import torch
 import pytorch_lightning as pl
 from lightning.pytorch.loggers import WandbLogger
-from latent_dataset import StreamingLatentDataset
+from prot2chemdiff.utils.latent_dataset import StreamingLatentDataset
 from torch.utils.data import DataLoader
-from diffuser_lightning import Prot2Chem_Diffusion
+from prot2chemdiff.diffuser_lightning import Prot2Chem_Diffusion
 
 
 if __name__ == "__main__":
