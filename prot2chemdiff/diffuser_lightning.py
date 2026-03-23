@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import pytorch_lightning as pl
 from diffusers import DDPMScheduler
-from diffuser import ConditionalDiT
+from prot2chemdiff.diffuser import ConditionalDiT
 
 class Prot2Chem_Diffusion(pl.LightningModule):
     def __init__(self, learning_rate=1e-4, drop_prob=0.1):

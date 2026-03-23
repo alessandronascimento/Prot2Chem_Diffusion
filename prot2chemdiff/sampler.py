@@ -2,14 +2,14 @@ import torch
 from tqdm import tqdm
 import selfies as sf
 from rdkit import Chem
-from utils import decode_from_latent
+from prot2chemdiff.vae_utils import decode_from_latent
 from transformers import AutoTokenizer, AutoModel
 import argparse
 import sys
-from diffuser_lightning import Prot2Chem_Diffusion
-from vae_model import MolecularVAE
+from prot2chemdiff.diffuser_lightning import Prot2Chem_Diffusion
+from prot2chemdiff.vae_model import MolecularVAE
 import pandas as pd
-from utils.load_model import load_pretrained_models
+from prot2chemdiff.utils.load_model import load_pretrained_models
 
 
 def generate_target_embeddings(target_seq='', model_name='facebook/esm2_t33_650M_UR50D', device='cuda'):
