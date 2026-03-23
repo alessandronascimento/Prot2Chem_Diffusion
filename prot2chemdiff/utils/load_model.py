@@ -20,4 +20,4 @@ def load_pretrained_models(repo_id="alessandronascimento/prot2chemdiff"):
     vae_model.load_state_dict(state_dict)
     diffuser = Prot2Chem_Diffusion.load_from_checkpoint(diff_path)
     
-    return vae, diffuser
+    return vae_model, diffuser
