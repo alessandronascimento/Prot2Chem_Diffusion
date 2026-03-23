@@ -15,7 +15,7 @@ def load_pretrained_models(repo_id="alessandronascimento/prot2chemdiff"):
     
     # Load Models
     vae_model = MolecularVAE(model_name="zjunlp/MolGen-large", latent_dim=256)
-    state_dict = torch.load("vae_weights.ckpt")
+    state_dict = torch.load(vae_path)
     state_dict = {k.replace("module.", ""): v for k, v in state_dict.items()}
     vae_model.load_state_dict(state_dict)
     diffuser = Prot2Chem_Diffusion.load_from_checkpoint(diff_path)
