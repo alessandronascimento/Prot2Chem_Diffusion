@@ -1,7 +1,6 @@
 train_vae/
 train_diffusion/
 inference/
-utils/
 validation_DUDEZ/
 prospective_analysis/
 data/*.csv.gz
@@ -12,3 +11,6 @@ data/clustered_jglaser_binding_affinity/preprocess.out
 data/clustered_jglaser_binding_affinity/preprocess_train.out
 data/clustered_jglaser_binding_affinity/preprocess.sub
 data/push_to_hub.py
+utils/m8_files
+utils/JGlaser*
+utils/jglaser.fasta.gz
